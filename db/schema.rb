@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140320001234) do
+ActiveRecord::Schema.define(version: 20140324224658) do
+
+  create_table "line_items", force: true do |t|
+    t.integer  "order_id"
+    t.integer  "product_id"
+    t.integer  "units"
+    t.decimal  "price",      precision: 10, scale: 2
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "line_items", ["order_id"], name: "index_line_items_on_order_id", using: :btree
+  add_index "line_items", ["product_id"], name: "index_line_items_on_product_id", using: :btree
 
   create_table "orders", force: true do |t|
     t.string   "state"
@@ -33,6 +45,7 @@ ActiveRecord::Schema.define(version: 20140320001234) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "category"
+    t.decimal  "price",        precision: 10, scale: 2
   end
 
 end
