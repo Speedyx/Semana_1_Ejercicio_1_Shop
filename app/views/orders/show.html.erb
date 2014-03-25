@@ -30,5 +30,23 @@
   <%= @order.surname %>
 </p>
 
+<table class="ordertable">
+  <tr class="orderrow">
+      <th>Order products</th>
+  </tr>
+  <tr class="orderrow">
+    <th>Id</th>
+  </tr>
+  <tr>
+    <% for line_item in @order.line_items %>
+    <td><%= h line_item.id %></td>
+    <% end %>
+  </tr>
+
+</table>
+
+<br/>
+
+
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>
