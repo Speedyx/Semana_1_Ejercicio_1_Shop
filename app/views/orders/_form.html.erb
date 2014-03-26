@@ -39,21 +39,16 @@
     <%= f.submit %>
   </div>
 
-  <table class="ordertable">
-    <tr class="orderrow">
+  <table>
+    <tr>
         <th >Order products</th>
     </tr>
-    <tr class="orderrow">
-      <th>Id</th>
-    </tr>
+
     <%= f.fields_for :line_items do |builder| %>
       <%= render 'line_item_fields', :f => builder %>
     <% end %>
+
     <tr><td ><%= link_to_add_fields "Add new line", f, :line_items %></td></tr>
   </table>
-
-  <div class="actions">
-    <p><%= f.submit "Submit" %></p>
-  </div>
 
 <% end %>
