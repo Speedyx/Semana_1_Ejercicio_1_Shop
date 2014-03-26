@@ -34,14 +34,21 @@
 <table>
   <tr>
       <th>Line items</th>
+      <th></th>
+      <th></th>
   </tr>
   <tr>
-    <% for line_item in @order.line_items %>
+    <td>Name</td>
+    <td>Units</td>
+    <td>Price</td>
+  </tr>
+  <% for line_item in @order.line_items %>
+  <tr>
     <td><%= h line_item.product.name %></td>
     <td><%= h line_item.units %></td>
     <td><%= h line_item.price %></td>
-    <% end %>
-  </tr>
+    </tr>
+  <% end %>
 </table>
 </p>
 

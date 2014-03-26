@@ -11,44 +11,41 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div>
     <%= f.label :state %><br>
     <%= f.text_field :state %>
   </div>
-  <div class="field">
+  <div>
     <%= f.label :payment %><br>
     <%= f.text_field :payment %>
   </div>
-  <div class="field">
+  <div>
     <%= f.label :address %><br>
     <%= f.text_field :address %>
   </div>
-  <div class="field">
+  <div>
     <%= f.label :city %><br>
     <%= f.text_field :city %>
   </div>
-  <div class="field">
+  <div>
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
-  <div class="field">
+  <div>
     <%= f.label :surname %><br>
     <%= f.text_field :surname %>
   </div>
-  <div class="actions">
+  <div>
+  <%= f.label :line_items, "Products" %>
+  <div>
+  <%= f.fields_for :line_items do |builder| %>
+    <%= render 'line_item_fields', :f => builder %>
+  <% end %>
+  <%= link_to_add_fields "Add item", f, :line_items %>
+  </div>
+  </div>
+  <div>
     <%= f.submit %>
   </div>
-
-  <table>
-    <tr>
-        <th >Order products</th>
-    </tr>
-
-    <%= f.fields_for :line_items do |builder| %>
-      <%= render 'line_item_fields', :f => builder %>
-    <% end %>
-
-    <tr><td ><%= link_to_add_fields "Add new line", f, :line_items %></td></tr>
-  </table>
 
 <% end %>
