@@ -1,7 +1,9 @@
-    <div class="fields">
+    <tr class="fields">
         <p>
-            <%= f.label :id, "Line Item" %>
-            <%= link_to_remove_fields "remove", f %>
-            <%= f.text_area :id, :rows => 2 %>
+            <%= f.text_area :product_id %>
+            <%= f.text_area :units %>
+            <%= f.text_area :price %>
+            <%= f.hidden_field :id %>
+            <%= f.hidden_field :_destroy %>
+            <%= link_to_function "remove", "remove_fields(this)" %>
         </p>
-    </div>
