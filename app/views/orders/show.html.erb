@@ -43,14 +43,12 @@
     <td>Price</td>
   </tr>
   <% for line_item in @order.line_items %>
-  <tr>
-    <td><%= h line_item.product.name %></td>
-    <td><%= h line_item.units %></td>
-    <td><%= number_to_currency(line_item.price, unit: "€", precision: 2, :format => "%n €", :separator => ",", :delimiter => ".") %></td>
-    </tr>
+    <%= render 'show_line_item_fields', :line_item => line_item %>
   <% end %>
 </table>
 </p>
 
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>
+
+
