@@ -30,7 +30,8 @@
   <%= @order.surname %>
 </p>
 
-<p>
+<br />
+
 <table>
   <tr>
       <th>Line items</th>
@@ -46,7 +47,8 @@
     <%= render 'show_line_item_fields', :line_item => line_item %>
   <% end %>
 </table>
-</p>
+
+<br />
 
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>
