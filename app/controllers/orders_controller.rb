@@ -1,6 +1,10 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
 
+  # Filtro cutre para probar la validación
+  #http_basic_authenticate_with :name => "frodo", :password => "thering"
+
+
   # GET /orders
   # GET /orders.json
   def index
@@ -75,4 +79,5 @@ class OrdersController < ApplicationController
     def order_params
       params.require(:order).permit(:state, :payment, :address, :city, :name, :surname, :line_items_attributes => [:id,:product_id, :units, :price, :_destroy])
     end
+
 end

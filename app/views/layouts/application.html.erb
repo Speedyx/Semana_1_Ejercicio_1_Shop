@@ -13,29 +13,43 @@
 
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
+
     <div class="navbar-header">
-      <a class="navbar-brand" href="/">Home</a>
+        <%= link_to "Home", "/", :class => "navbar-brand" %>
+    </div>
+    <% if current_user %>
+    <div class="navbar-header">
+        <%= link_to "Products", "/products", :class => "navbar-brand" %>
     </div>
     <div class="navbar-header">
-      <a class="navbar-brand" href="/products">Products</a>
+        <%= link_to "Order", "/orders", :class => "navbar-brand" %>
     </div>
     <div class="navbar-header">
-      <a class="navbar-brand" href="/products/new">New product</a></li>
+        <%= link_to "Users", "/users", :class => "navbar-brand" %>
     </div>
     <div class="navbar-header">
-      <a class="navbar-brand" href="/products/1">Show product 1</a></li>
+      <div class="navbar-brand">Logged in as</div>
+      <%= link_to current_user.name, "/users/#{current_user.id}", :class => "navbar-brand" %>
     </div>
     <div class="navbar-header">
-      <a class="navbar-brand" href="/orders">Order</a></li>
+        <%= link_to "Log out", log_out_path, :class => "navbar-brand" %>
     </div>
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/orders/new">New order</a></li>
-    </div>
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/orders/1">Show order 1</a></li>
-    </div>
+    <% else %>
+      <div class="navbar-header">
+        <%= link_to "Sign up", sign_up_path, :class => "navbar-brand" %>
+      </div>
+      <div class="navbar-header">
+        <%= link_to "Log in", log_in_path, :class => "navbar-brand" %>
+      </div>
+    <% end %>
   </div>
 </nav>
+
+<div class="container">
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, :id => "flash_#{name}" %>
+<% end %>
+</div>
 
 <div class="container">
   <%= yield %>

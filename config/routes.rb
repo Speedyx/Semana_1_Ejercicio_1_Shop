@@ -1,8 +1,15 @@
 Semana1Ejercicio1Shop::Application.routes.draw do
+  resources :users
+
   get "home/index"
   root :to => "home#index"
+  get "sign_up" => "users#new", :as => "sign_up"
+  get "log_in" => "sessions#new", :as => "log_in"
+  get "log_out" => "sessions#destroy", :as => "log_out"
   resources :orders
   resources :products
+  resources :sessions
+  resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
