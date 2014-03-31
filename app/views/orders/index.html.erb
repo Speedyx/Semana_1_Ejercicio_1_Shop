@@ -1,4 +1,6 @@
+<% if current_user %>
 <h1>Listing orders</h1>
+
 
 <table>
   <thead>
@@ -36,3 +38,7 @@
 <br>
 
 <%= link_to 'New Order', new_order_path %>
+
+<% else %>
+<h1>Validate yourself first, please</h1>
+<% end %>

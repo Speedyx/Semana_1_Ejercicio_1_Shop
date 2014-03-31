@@ -1,10 +1,6 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
 
-  # Filtro cutre para probar la validación
-  #http_basic_authenticate_with :name => "frodo", :password => "thering"
-
-
   # GET /orders
   # GET /orders.json
   def index

@@ -7,13 +7,13 @@ class ApplicationController < ActionController::Base
   #pero si lo activo me ignora el puerto, y me sale apache
   #force_ssl
 
-  helper_method :current_user
-
 
   private
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
+
+  helper_method :current_user
 
 end
