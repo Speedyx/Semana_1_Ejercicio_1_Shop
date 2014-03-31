@@ -1,6 +1,5 @@
 Semana1Ejercicio1Shop::Application.routes.draw do
-  resources :users
-
+  
   get "home/index"
   root :to => "home#index"
   get "sign_up" => "users#new", :as => "sign_up"
