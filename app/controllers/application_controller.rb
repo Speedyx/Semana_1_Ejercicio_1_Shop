@@ -18,6 +18,10 @@ class ApplicationController < ActionController::Base
     redirect_to log_in_path, notice: 'Log in first, please!' unless current_user
   end
 
+  def check_user_logged_login
+    redirect_to "#{users_path}/#{current_user.id}" unless !current_user
+  end
+
   helper_method :current_user
 
 end
