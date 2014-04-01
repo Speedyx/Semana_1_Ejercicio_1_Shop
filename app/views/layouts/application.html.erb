@@ -19,7 +19,7 @@
     <%= link_to "Users", "/users", :class => "navbar-brand" %>
     <div class="navbar-brand">Logged in as</div>
     <%= link_to current_user.name, "/users/#{current_user.id}", :class => "navbar-brand" %>
-    <%= link_to "Log out", session_path(current_user.id), method: :delete %>
+    <%= link_to "Log out", session_path(current_user.id), method: :delete, :class => "navbar-brand"  %>
   <% else %>
     <%= link_to "Sign up", sign_up_path, :class => "navbar-brand" %>
     <%= link_to "Log in", log_in_path, :class => "navbar-brand" %>
