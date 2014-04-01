@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :check_user_logged
+  before_action :check_user_logged, except: [:new]
 
   # Filtro cutre para probar la validación
   #http_basic_authenticate_with :name => "frodo", :password => "thering"
