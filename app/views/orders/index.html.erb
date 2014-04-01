@@ -4,7 +4,7 @@
 <table>
   <thead>
     <tr>
-      <th>State</th>
+      <th>Status</th>
       <th>Payment</th>
       <th>Address</th>
       <th>City</th>
@@ -19,7 +19,7 @@
   <tbody>
     <% @orders.each do |order| %>
       <tr>
-        <td><%= order.state %></td>
+        <td><%= order.status %></td>
         <td><%= order.payment %></td>
         <td><%= order.address %></td>
         <td><%= order.city %></td>

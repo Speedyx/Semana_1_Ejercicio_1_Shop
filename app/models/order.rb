@@ -9,7 +9,7 @@ class Order < ActiveRecord::Base
     validates_presence_of :city
     validates_presence_of :payment
     validates_format_of :payment, :with => /\A\b(efectivo|tarjeta|paypal)\z/, :message => "efectivo, tarjeta o paypal"
-    validates_presence_of :state
-    validates_format_of :state, :with => /\A\b(Pendiente|Enviado|Recibido)\z/, :message => "Pendiente, Enviado, Recibido"
+    validates_presence_of :status
+    validates_format_of :status, :with => /\A\b(Pendiente|Enviado|Recibido)\z/, :message => "Pendiente, Enviado, Recibido"
 
 end

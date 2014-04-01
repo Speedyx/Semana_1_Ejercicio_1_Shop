@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140330233607) do
+ActiveRecord::Schema.define(version: 20140401230844) do
 
   create_table "customers", force: true do |t|
     t.string   "name"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20140330233607) do
   add_index "line_items", ["product_id"], name: "index_line_items_on_product_id", using: :btree
 
   create_table "orders", force: true do |t|
-    t.string   "state"
+    t.string   "status"
     t.string   "payment"
     t.string   "address"
     t.string   "city"
