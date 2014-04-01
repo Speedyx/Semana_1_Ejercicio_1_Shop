@@ -14,6 +14,10 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
+  def check_user_logged
+    redirect_to log_in_path, notice: 'Log in first, please!' unless current_user
+  end
+
   helper_method :current_user
 
 end
