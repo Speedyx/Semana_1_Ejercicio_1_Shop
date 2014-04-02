@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :check_user_logged, except: [:new]
+  before_action :check_user_logged, except: [:create, :new]
+  before_action :check_user_logged_login, only: [:new]
 
   # Filtro cutre para probar la validación
   #http_basic_authenticate_with :name => "frodo", :password => "thering"
@@ -32,6 +33,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        session[:user_id] = @user.id
         format.html { redirect_to root_url, notice: 'Signed up!' }
         format.json { render action: 'show', status: :created, location: @user }
       else
