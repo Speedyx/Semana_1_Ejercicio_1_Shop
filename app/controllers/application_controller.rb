@@ -19,7 +19,9 @@ class ApplicationController < ActionController::Base
   end
 
   def check_user_logged_login
-    redirect_to "#{users_path}/#{current_user.id}" unless !current_user
+    if current_user
+      redirect_to "#{users_path}/#{current_user.id}"
+    end
   end
 
   helper_method :current_user
