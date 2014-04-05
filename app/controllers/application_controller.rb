@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
 
   def check_user_logged_login
     if current_user
-      redirect_to "#{users_path}/#{current_user.id}"
+      redirect_to user_path(@user)
     end
   end
 
