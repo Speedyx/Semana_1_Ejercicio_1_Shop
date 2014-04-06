@@ -11,10 +11,12 @@
     </div>
   <% end %>
 
+  <% if @order.id? %>
   <div>
     <%= f.label :status %><br>
     <%= f.text_field :status %>
   </div>
+  <% end %>
   <div>
     <%= f.label :payment %><br>
     <%= f.text_field :payment %>

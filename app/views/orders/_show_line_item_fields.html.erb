@@ -2,4 +2,5 @@
         <td><%= h line_item.product.name %></td>
         <td><%= h line_item.units %></td>
         <td><%= number_to_currency(line_item.price, unit: "€", precision: 2, :format => "%n €", :separator => ",", :delimiter => ".") %></td>
+        <td><%= number_to_currency(line_item.units * line_item.product.price, unit: "€", precision: 2, :format => "%n €", :separator => ",", :delimiter => ".") %></td>
     </tr>
