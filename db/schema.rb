@@ -13,14 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20140401230844) do
 
-  create_table "customers", force: true do |t|
-    t.string   "name"
-    t.string   "password"
-    t.string   "password_digest"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "line_items", force: true do |t|
     t.integer  "order_id"
     t.integer  "product_id"
