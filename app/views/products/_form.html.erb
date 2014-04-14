@@ -1,7 +1,7 @@
 <%= form_for(@product) do |f| %>
   <% if @product.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+      <h2><%= pluralize(@product.errors.count, t('alert.error') %> <%= t('products.form.prohibited_this_product_from_being_saved')) %></h2>
 
       <ul>
       <% @product.errors.full_messages.each do |msg| %>
@@ -34,7 +34,8 @@
   <div class="field">
     <%= f.label :category %><br>
     <%= f.text_field :category %>
-  </div>  <div class="field">
+  </div>
+  <div class="field">
     <%= f.label :price %><br>
     <%= f.text_field :price %>
   </div>

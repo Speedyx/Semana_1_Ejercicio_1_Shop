@@ -19,5 +19,110 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
+
 en:
-  hello: "Hello world"
+  #hello: "Hello world"
+
+  dictionary:
+    title: &title You're welcome!
+    back: &back Back
+    new: &new New
+    edit: &edit Edit
+    show: &show Show
+    filter: &filter Filter
+    destroy: &destroy Destroy
+    Products: &Products Products
+    email: &email email
+    status: &status Status
+    payment: &payment Payment
+    address: &address Address
+    city: &city City
+    name: &name Name
+    surname: &surname Surname
+    password: &password Password
+    description: &description Description
+    date_add: &date_add Date add
+    manufacturer: &manufacturer Manufacturer
+    units: &units Units
+    category: &category Category
+    price: &price Price
+
+  nav:
+    home: Home
+    Products: Products
+    Order: Order
+    Users: Users
+    Logged_in_as: Logged in as
+    Log_out: Log out
+    Log_in: Log in
+    Sign_up: Sign up
+    back: *back
+    edit: *edit
+    show: *show
+
+  flash:
+    invalid_email_or_password: Invalid email or password
+    logged_in: Logged in!
+    you_are_logged_out: You are logged out!
+
+  home:
+    title: *title
+    paragraph: Start
+
+  orders:
+    title: Listing orders
+    created: "Order was successfully created!"
+    updated: "Order was successfully updated"
+    status: *status
+    payment: *payment
+    address: *address
+    city: *city
+    name: *name
+    surname: *surname
+    new: *new
+    edit: *edit
+    form:
+        add_item: Add item
+        Products: *Products
+        prohibited_this_order_from_being_saved: prohibited this order from being saved
+
+  products:
+    title: Listing products
+    filter:
+      title: Filters
+    created: "Product was successfully created!"
+    updated: "Product was successfully updated"
+    name: *name
+    description: *description
+    date_add: *date_add
+    manufacturer: *manufacturer
+    units: *units
+    category: *category
+    price: *price
+    new: *new
+    edit: *edit
+    filter: *filter
+    form:
+        prohibited_this_product_from_being_saved: prohibited this product from being saved
+
+  sessions:
+    log_in: Log in
+
+  users:
+    title: Listing users
+    created: "User was successfully created!"
+    updated: "User was successfully updated"
+    new: *new
+    edit: *edit
+    name: *name
+    email: *email
+    form:
+        prohibited_this_user_from_being_saved: prohibited this user from being saved
+
+  alert:
+    are_you_sure: Are you sure?
+    destroy: Destroy
+    Do_you_want_to_end_session: Do you want to end session?
+    error: Error
+
+

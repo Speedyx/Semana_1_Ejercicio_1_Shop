@@ -6,15 +6,15 @@ class User < ActiveRecord::Base
     # http://rubular.com/
 
     #validates_presence_of :password, :on => :create
-    validates_presence_of :password
+    validates :password, :password_digest,  presence: true, on: :create
     # Validar password
     # ^ => Empieza y tiene
     # ?=.*[a-zA-Z] => Busca algún caracter que sea letra
     # ?=.*[0-9] => Busca algún caracter que sea número
     # {8,} => 8 de largo o más sin tope
-    validates_format_of :password, :with => /(?=.*[a-zA-Z])(?=.*[0-9]).{8,}/, :message => "8 characters at least including 1 number and 1 char."
-    validates_presence_of :email
-    validates_uniqueness_of :email
+    validates :password, length: { minimum: 8 }, format: {with: /(?=.*[a-zA-Z])(?=.*[0-9])/, message: '8 characters at least including 1 number and 1 char.'}
+    validates :name, :surname, :email, presence: true
+    validates :name, :email, uniqueness:true
     #Validar email
     # [] => Especificación de rango
     # \A y \z => Inicio y fin de cadena
@@ -25,8 +25,5 @@ class User < ActiveRecord::Base
     # @ => Y después de la arroba
     # ([^@\s]+\.) => No puede haber arroba  y espacio después  de la arroba, y luego va un punto
     # [^@\s]+\z/ => No puede haber arroba  y espacio después de la arroba, y luego va final de cadena
-    validates_format_of :email,:with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/,:message => "It seems to be invalid."
-    validates_presence_of :name
-    validates_uniqueness_of :name
-
+    validates :email, format: {with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/, message: 'It seems to be invalid.'}
 end

@@ -1,7 +1,7 @@
 <%= form_for(@order) do |f| %>
   <% if @order.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+      <h2><%= pluralize(@order.errors.count, t('alert.error')) %> <%= t('orders.form.prohibited_this_order_from_being_saved') %></h2>
 
       <ul>
       <% @order.errors.full_messages.each do |msg| %>
@@ -38,12 +38,12 @@
     <%= f.text_field :surname %>
   </div>
   <div>
-  <%= f.label :line_items, "Products" %>
+  <%= f.label :line_items, t('orders.form.Products') %>
   <div>
   <%= f.fields_for :line_items do |builder| %>
     <%= render 'line_item_fields', :f => builder %>
   <% end %>
-  <%= link_to_add_fields "Add item", f, :line_items %>
+  <%= link_to_add_fields t('orders.form.add_item'), f, :line_items %>
   </div>
   </div>
   <div>

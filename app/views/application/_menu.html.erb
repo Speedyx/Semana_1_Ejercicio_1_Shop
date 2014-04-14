@@ -1,14 +1,14 @@
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <%= link_to "Home", root_path, :class => "navbar-brand" %>
+  <%= link_to t("nav.home"), root_path, :class => "navbar-brand" %>
   <% if current_user %>
-    <%= link_to "Products", products_path, :class => "navbar-brand" %>
-    <%= link_to "Order", orders_path, :class => "navbar-brand" %>
-    <%= link_to "Users", users_path, :class => "navbar-brand" %>
-    <div class="navbar-brand">Logged in as</div>
-    <%= link_to current_user.name, current_user, :class => "navbar-brand" %>
-    <%= link_to 'Log out', session_path(current_user.id), method: :delete, data: { confirm: 'Do you want to end session?' }, :class => "navbar-brand"   %>
+    <%= link_to t("nav.Products"), products_path, :class => "navbar-brand" %>
+    <%= link_to t("nav.Order"), orders_path, :class => "navbar-brand" %>
+    <%= link_to t("nav.Users"), users_path, :class => "navbar-brand" %>
+    <div class="navbar-brand"><%= t ("nav.Logged_in_as") %></div>
+    <%= link_to current_user.name, users_path(id: current_user.id), :class => "navbar-brand" %>
+    <%= link_to t('nav.Log_out'), session_path(id: current_user.id), method: :delete, data: { confirm: t("alert.Do_you_want_to_end_session")}, :class => "navbar-brand"   %>
   <% else %>
-    <%= link_to "Sign up", sign_up_path, :class => "navbar-brand" %>
-    <%= link_to "Log in", log_in_path, :class => "navbar-brand" %>
+    <%= link_to t("nav.Sign_up"), sign_up_path, :class => "navbar-brand" %>
+    <%= link_to t("nav.Log_in"), log_in_path, :class => "navbar-brand" %>
   <% end %>
 </nav>

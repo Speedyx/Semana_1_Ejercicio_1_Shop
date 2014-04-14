@@ -1,0 +1,26 @@
+<fieldset>
+  <legend><%= t('products.filter.title') %></legend>
+  <%= form_tag products_path, method: "get" do |f| %>
+    <div class="field">
+      <%= label_tag t('products.category') %><br>
+    </div>
+    <div class="field">
+      <%= label_tag t('products.units') %><br>
+      <%= text_field_tag :units, params[:units] %>
+    </div>
+    <div class="field">
+      <%= label_tag t('products.date_add') %><br>
+      <%= text_field_tag :date_add, params[:date_add] %>
+    </div>
+    <div class="field">
+      <%= label_tag t('products.manufacturer') %><br>
+      <%= text_field_tag :manufacturer, params[:manufacturer] %>
+    </div>
+    <div class="field">
+      <%= label_tag t('products.price') %><br>
+      <%= text_field_tag :min, params[:min] %> <%= t('products.to') %>
+      <%= text_field_tag :max, params[:max] %>
+    </div>
+    <%= submit_tag %>
+    <% end %>
+  </fieldset>

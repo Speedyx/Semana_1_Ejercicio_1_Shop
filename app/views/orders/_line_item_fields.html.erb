@@ -3,5 +3,5 @@
         <%= f.select :units, (0..10).map {|i| [i,i] } %>
         <%= f.hidden_field :id %>
         <%= f.hidden_field :_destroy %>
-        <%= link_to_function "Remove", "remove_fields(this)" %>
+        <%= link_to_function t('alert.destroy'), "remove_fields(this)" %>
     </div>

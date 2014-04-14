@@ -1,39 +1,39 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong><%= t('products.name') %></strong>
   <%= @product.name %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong><%= t('products.description') %>:</strong>
   <%= @product.description %>
 </p>
 
 <p>
-  <strong>Date add:</strong>
+  <strong><%= t('products.date_add') %>:</strong>
   <%= @product.added_at %>
 </p>
 
 <p>
-  <strong>Manufacturer:</strong>
+  <strong><%= t('products.manufacturer') %>:</strong>
   <%= @product.manufacturer %>
 </p>
 
 <p>
-  <strong>Units:</strong>
+  <strong><%= t('products.units') %>:</strong>
   <%= @product.units %>
 </p>
 
 <p>
-  <strong>Category:</strong>
+  <strong><%= t('products.category') %>:</strong>
   <%= @product.category %>
 </p>
 
 <p>
-  <strong>Price:</strong>
+  <strong><%= t('products.price') %>:</strong>
   <%= @product.price %>
 </p>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<%= link_to t('nav.edit'), edit_product_path(id: @product.id)%> |
+<%= link_to t('nav.back'), products_path %>

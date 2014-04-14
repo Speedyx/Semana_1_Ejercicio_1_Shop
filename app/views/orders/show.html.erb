@@ -1,32 +1,32 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Status:</strong>
+  <strong><%= t('orders.status') %>:</strong>
   <%= @order.status %>
 </p>
 
 <p>
-  <strong>Payment:</strong>
+  <strong><%= t('orders.payment') %>:</strong>
   <%= @order.payment %>
 </p>
 
 <p>
-  <strong>Address:</strong>
+  <strong><%= t('orders.address') %>:</strong>
   <%= @order.address %>
 </p>
 
 <p>
-  <strong>City:</strong>
+  <strong><%= t('orders.city') %>:</strong>
   <%= @order.city %>
 </p>
 
 <p>
-  <strong>Name:</strong>
+  <strong><%= t('orders.name') %>:</strong>
   <%= @order.name %>
 </p>
 
 <p>
-  <strong>Surname:</strong>
+  <strong><%= t('orders.surname') %>:</strong>
   <%= @order.surname %>
 </p>
 
@@ -34,14 +34,14 @@
 
 <table>
   <tr>
-      <th>Line items</th>
+      <th><%= t('orders.title') %></th>
       <th></th>
       <th></th>
   </tr>
   <tr>
-    <td>Name</td>
-    <td>Units</td>
-    <td>Price</td>
+    <td><%= t('orders.name') %></td>
+    <td><%= t('orders.units') %></td>
+    <td><%= t('orders.price') %></td>
   </tr>
   <% for line_item in @order.line_items %>
     <%= render 'show_line_item_fields', :line_item => line_item %>
@@ -50,7 +50,7 @@
 
 <br />
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+<%= link_to t('nav.edit'), edit_order_path(id: @order.id) %> |
+<%= link_to t('nav.back'), orders_path %>
 
 

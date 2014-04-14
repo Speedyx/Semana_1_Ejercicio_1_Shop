@@ -1,11 +1,10 @@
-<h1>Listing users</h1>
+<h1><%= t('users.title') %></h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Password</th>
+      <th><%= t('users.name') %></th>
+      <th><%= t('users.email') %></th>
       <th></th>
       <th></th>
       <th></th>
@@ -17,10 +16,9 @@
       <tr>
         <td><%= user.name %></td>
         <td><%= user.email %></td>
-        <td><%= user.password %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t('nav.show'), user_path(id: user.id) %></td>
+        <td><%= link_to t('nav.edit'), edit_user_path(id: user.id) %></td>
+        <td><%= link_to t('alert.destroy'), user_path(id: user.id), method: :delete, data: { confirm: t('alert.are_you_sure') } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to t('users.new'), new_user_path %>

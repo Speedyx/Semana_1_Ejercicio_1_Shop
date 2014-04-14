@@ -7,8 +7,18 @@ class ApplicationController < ActionController::Base
   #pero si lo activo me ignora el puerto, y me sale apache
   #force_ssl
 
+  before_action :set_locale
 
-  private
+  def set_locale
+    I18n.locale = params[:locale] || I18n.default_locale
+  end
+
+#Sin la línea de abajo no puedo editar los usuarios / ordenes
+ def default_url_options(options={})
+   {:locale => I18n.locale}
+ end
+
+private
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
@@ -20,7 +30,7 @@ class ApplicationController < ActionController::Base
 
   def check_user_logged_login
     if current_user
-      redirect_to user_path(@user)
+      redirect_to user_path(id: :user_id)
     end
   end
 

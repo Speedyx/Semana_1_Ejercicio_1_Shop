@@ -1,15 +1,15 @@
-<h1>Listing orders</h1>
+<h1><%= t('orders.title') %></h1>
 
 
 <table>
   <thead>
     <tr>
-      <th>Status</th>
-      <th>Payment</th>
-      <th>Address</th>
-      <th>City</th>
-      <th>Name</th>
-      <th>Surname</th>
+      <th><%= t('orders.status') %></th>
+      <th><%= t('orders.payment') %></th>
+      <th><%= t('orders.address') %></th>
+      <th><%= t('orders.city') %></th>
+      <th><%= t('orders.name') %></th>
+      <th><%= t('orders.surname') %></th>
       <th></th>
       <th></th>
       <th></th>
@@ -25,15 +25,14 @@
         <td><%= order.city %></td>
         <td><%= order.name %></td>
         <td><%= order.surname %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to order, method: :delete, data: { confirm: 'Are you sure?' } do %>Destroy</td>
+        <td><%= link_to t('nav.show'), order_path(id: order.id) %></td>
+        <td><%= link_to t('nav.edit'), edit_order_path(id: order.id) %></td>
+        <td><%= link_to t('alert.destroy'), order_path(id: order.id), method: :delete, data: { confirm: t('alert.are_you_sure') } %></td>
       </tr>
-      <% end %>
     <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Order', new_order_path %>
+<%= link_to t('orders.new'), new_order_path %>

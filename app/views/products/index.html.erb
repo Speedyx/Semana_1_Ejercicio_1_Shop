@@ -1,15 +1,17 @@
-<h1>Listing products</h1>
+<h1><%= t('products.title') %></h1>
+
+<%= render 'filter' %>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Date add</th>
-      <th>Manufacturer</th>
-      <th>Units</th>
-      <th>Price</th>
-      <th></th>
+      <th><%= t('products.name') %></th>
+      <th><%= t('products.description') %></th>
+      <th><%= t('products.date_add') %></th>
+      <th><%= t('products.manufacturer') %></th>
+      <th><%= t('products.units') %></th>
+      <th><%= t('products.category') %></th>
+      <th><%= t('products.price') %></th>
       <th></th>
       <th></th>
       <th></th>
@@ -26,9 +28,9 @@
         <td><%= product.units %></td>
         <td><%= product.category %></td>
         <td><%= product.price %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t('nav.show'), product_path(id: product.id) %></td>
+        <td><%= link_to t('nav.edit'), edit_product_path(id: product.id) %></td>
+        <td><%= link_to t('alert.destroy'), product_path(id: product.id), method: :delete, data: { confirm: t('alert.are_you_sure') } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -36,4 +38,4 @@
 
 <br>
 
-<%= link_to 'New Product', new_product_path %>
+<%= link_to t('products.new'), new_product_path %>
