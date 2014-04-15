@@ -15,6 +15,9 @@
 /log/*.log
 /tmp
 
-#Borrar parametros BBDD
+#DIY CONFIGURATION
+####################
+
+#DB
 #/config/database.yml
 database.yml

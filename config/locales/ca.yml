@@ -200,25 +200,25 @@ ca:
 
 
   dictionary:
-    title: &title You're welcome!
+    title: &title "Benvingut!"
     back: &back Tornar
     new: &new Nou
     edit: &edit Editar
     show: &show Mostrar
     filter: &filter Filtre
-    destroy: &destroy Eliminar
+    destroy: &destroy Esborrar
     Products: &Products Productes
     email: &email email
     status: &status Estat
-    payment: &payment Tipus de pagament
+    payment: &payment "Tipus de pagament"
     address: &address Adreça
     city: &city Ciutat
     name: &name Nom
     surname: &surname Cognoms
     password: &password Contrasenya
     description: &description Descripció
-    date_add: &date_add Data alta
-    manufacturer: &manufacturer Fet per
+    date_add: &date_add "Data alta"
+    manufacturer: &manufacturer "Fet per"
     units: &units Unitats
     category: &category Categoria
     price: &price Preu
@@ -226,9 +226,10 @@ ca:
   nav:
     home: Inici
     Products: Productes
-    Order: Órdens
+    Orders: Comandes
     Users: Usuaris
-    Logged_in_as: Accedint com
+    Mails: Mails
+    Logged_in_as: Salutacions
     Log_out: Sortir
     Log_in: Accedir
     Sign_up: Alta
@@ -237,35 +238,45 @@ ca:
     show: *show
 
   flash:
-    invalid_email_or_password: email o password incorrectes
-    logged_in: Has accedit!
-    you_are_logged_out: Has sortit
+    invalid_email_or_password: "email o password incorrectes"
+    logged_in: "Has accedit!"
+    you_are_logged_out: "Has sortit"
 
   home:
-    title: Benvingut!
+    title: *title
     paragraph: Inici
 
+  order_mailer:
+    info: "Detall de la comanda de"
+    description: "Açí té el detall de la comanda"
+    thanks: "Gracies per la seua comanda i tinga un bon dia!"
+
   orders:
-    title: Llistat d'ordreshh
-    created: "Has creat l'ordre!"
-    updated: "Has actualitzat l'ordre"
+    title: "Llistat de comandes"
+    created: "Has creat la comanda!"
+    updated: "Has actualitzat la comanda"
     status: *status
     payment: *payment
     address: *address
     city: *city
     name: *name
     surname: *surname
+    units: *units
+    price: *price
     new: *new
+    new_order: "Nova comanda"
     edit: *edit
     form:
-        add_item: Afegir item
+        add_item: "Afegir producte"
         Products: *Products
-        prohibited_this_order_from_being_saved: no s'ha guardat l'ordre
+        prohibited_this_order_from_being_saved: "no s'ha guardat la comanda"
+        add: "Crear comanda"
 
   products:
-    title: Llistat de productes
+    title: "Llistat de productes"
     filter:
       title: Filtres
+      search: Cercar
     created: "Has creat el producte!"
     updated: "Has actualitzat el producte"
     name: *name
@@ -275,16 +286,19 @@ ca:
     units: *units
     category: *category
     price: *price
+    to: a
     new: *new
+    new_product: "Nou producte"
     edit: *edit
     form:
-        prohibited_this_product_from_being_saved: no s'ha guardat el producte
+        prohibited_this_product_from_being_saved: "no s'ha guardat el producte"
+        add: "Crear producte"
 
   sessions:
-    log_in: Començar sessió
+    log_in: "Començar sessió"
 
   users:
-    title: Llistat de usuaris
+    title: "Llistat de usuaris"
     created: "Has creat l'usuari!"
     updated: "Has actualitzat l'usuari"
     new: *new
@@ -292,10 +306,32 @@ ca:
     name: *name
     email: *email
     form:
-        prohibited_this_user_from_being_saved: no s'ha guardat l'usuari
+        prohibited_this_user_from_being_saved: "no s'ha guardat l'usuari"
+        add: "Crear usuari"
 
   alert:
-    are_you_sure: Está segur?
+    are_you_sure: "Está segur?"
     destroy: *destroy
-    Do_you_want_to_end_session: Vol tancar la sessió?
+    Do_you_want_to_end_session: "Vol tancar la sessió?"
     error: Error
+
+  activerecord:
+    attributes:
+      order:
+        status: Estat
+        payment: "Tipus de pagament"
+        address: Adreça
+        city: Ciutat
+        name: Nom
+        surname: Cognoms
+      line_item:
+        units: Unitats
+        product: Producte
+      product:
+        name: Nom
+        description: Descripció
+        category: Categoria
+        added_at: Afegit en
+        manufacturer: "Fet per"
+        units: Unitats
+        price: Preu

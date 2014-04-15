@@ -33,6 +33,8 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
+        # Tell the UserMailer to send a welcome email after save
+        OrderMailer.order_mailer(current_user, @order).deliver
         format.html { redirect_to order_path(id: @order.id), notice: ('notice.order_was_successfully_created') }
         format.json { render action: 'show', status: :created, location: @order }
       else

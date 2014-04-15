@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :check_user_logged, except: [:create, :new]
-  before_action :check_user_logged_login, only: [:new]
 
   # Filtro cutre para probar la validación
   #http_basic_authenticate_with :name => "frodo", :password => "thering"
@@ -33,6 +32,9 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        # Tell the UserMailer to send a welcome email after save
+        UserMailer.user_mailer(@user).deliver
+
         session[:user_id] = @user.id
         format.html { redirect_to user_path(id: @user.id), notice: t('users.created'), title: @user.name }
         format.json { render action: 'show', status: :created, location: @user }

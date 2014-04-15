@@ -28,12 +28,6 @@ private
     redirect_to log_in_path, notice: 'Log in first, please!' unless current_user
   end
 
-  def check_user_logged_login
-    if current_user
-      redirect_to user_path(id: :user_id)
-    end
-  end
-
   helper_method :current_user
 
 end

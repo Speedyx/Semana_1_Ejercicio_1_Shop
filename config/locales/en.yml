@@ -24,7 +24,7 @@ en:
   #hello: "Hello world"
 
   dictionary:
-    title: &title You're welcome!
+    title: &title "You're welcome!"
     back: &back Back
     new: &new New
     edit: &edit Edit
@@ -41,7 +41,7 @@ en:
     surname: &surname Surname
     password: &password Password
     description: &description Description
-    date_add: &date_add Date add
+    date_add: &date_add "Date add"
     manufacturer: &manufacturer Manufacturer
     units: &units Units
     category: &category Category
@@ -50,27 +50,33 @@ en:
   nav:
     home: Home
     Products: Products
-    Order: Order
+    Orders: Order
     Users: Users
-    Logged_in_as: Logged in as
-    Log_out: Log out
-    Log_in: Log in
-    Sign_up: Sign up
+    Mails: Mails
+    Logged_in_as: Hi
+    Log_out: "Log out"
+    Log_in: "Log in"
+    Sign_up: "Sign up"
     back: *back
     edit: *edit
     show: *show
 
   flash:
-    invalid_email_or_password: Invalid email or password
-    logged_in: Logged in!
-    you_are_logged_out: You are logged out!
+    invalid_email_or_password: "Invalid email or password"
+    logged_in: "Logged in!"
+    you_are_logged_out: "You are logged out!"
 
   home:
     title: *title
     paragraph: Start
 
+  order_mailer:
+    info: "Order info for"
+    description: "Here you are the order information:"
+    thanks: "Thanks for your order and have a great day!"
+
   orders:
-    title: Listing orders
+    title: "Listing orders"
     created: "Order was successfully created!"
     updated: "Order was successfully updated"
     status: *status
@@ -80,16 +86,19 @@ en:
     name: *name
     surname: *surname
     new: *new
+    new_order: "New order"
     edit: *edit
     form:
-        add_item: Add item
+        add_item: Add product
         Products: *Products
-        prohibited_this_order_from_being_saved: prohibited this order from being saved
+        prohibited_this_order_from_being_saved: "prohibited this order from being saved"
+        add: "Create order"
 
   products:
-    title: Listing products
+    title: "Listing products"
     filter:
       title: Filters
+      search: Search
     created: "Product was successfully created!"
     updated: "Product was successfully updated"
     name: *name
@@ -99,17 +108,20 @@ en:
     units: *units
     category: *category
     price: *price
+    to: to
     new: *new
+    new_product: "New product"
     edit: *edit
     filter: *filter
     form:
-        prohibited_this_product_from_being_saved: prohibited this product from being saved
+        prohibited_this_product_from_being_saved: "prohibited this product from being saved"
+        add: "Create product"
 
   sessions:
     log_in: Log in
 
   users:
-    title: Listing users
+    title: "Listing users"
     created: "User was successfully created!"
     updated: "User was successfully updated"
     new: *new
@@ -117,12 +129,32 @@ en:
     name: *name
     email: *email
     form:
-        prohibited_this_user_from_being_saved: prohibited this user from being saved
+        prohibited_this_user_from_being_saved: "prohibited this user from being saved"
+        add: "Create user"
 
   alert:
-    are_you_sure: Are you sure?
+    are_you_sure: "Are you sure?"
     destroy: Destroy
-    Do_you_want_to_end_session: Do you want to end session?
+    Do_you_want_to_end_session: "Do you want to end session?"
     error: Error
 
-
+  activerecord:
+    attributes:
+      order:
+        status: Status
+        payment: Payment
+        address: Address
+        city: City
+        name: Name
+        surname: Surname
+      line_item:
+        units: Units
+        product: Product
+      product:
+        name: Name
+        description: Description
+        category: Category
+        added_at: "Added at"
+        manufacturer: Manufacturer
+        units: Units
+        price: Price

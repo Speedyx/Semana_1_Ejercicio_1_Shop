@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1><%= t('order_mailer.info') %> <%= @user.name %></h1>
+    <p>
+      <%= t('order_mailer.description') %>:
+    </p>
+
+    <p>
+      <strong><%= t('orders.status') %>:</strong>
+      <%= @order.status %>
+    </p>
+
+    <p>
+      <strong><%= t('orders.payment') %>:</strong>
+      <%= @order.payment %>
+    </p>
+
+    <p>
+      <strong><%= t('orders.address') %>:</strong>
+      <%= @order.address %>
+    </p>
+
+    <p>
+      <strong><%= t('orders.city') %>:</strong>
+      <%= @order.city %>
+    </p>
+
+    <p>
+      <strong><%= t('orders.name') %>:</strong>
+      <%= @order.name %>
+    </p>
+
+    <p>
+      <strong><%= t('orders.surname') %>:</strong>
+      <%= @order.surname %>
+    </p>
+
+    <br />
+
+    <table>
+      <tr>
+          <th><%= t('orders.title') %></th>
+          <th></th>
+          <th></th>
+      </tr>
+      <tr>
+        <td><%= t('orders.name') %></td>
+        <td><%= t('orders.units') %></td>
+        <td><%= t('orders.price') %></td>
+      </tr>
+      <% for line_item in @order.line_items %>
+        <tr>
+            <td><%= h line_item.product.name %></td>
+            <td><%= h line_item.units %></td>
+            <td><%= number_to_currency(line_item.price, unit: "€", precision: 2, :format => "%n €", :separator => ",", :delimiter => ".") %></td>
+            <td><%= number_to_currency(line_item.units * line_item.product.price, unit: "€", precision: 2, :format => "%n €", :separator => ",", :delimiter => ".") %></td>
+        </tr>
+      <% end %>
+    </table>
+    <p><%= t('order_mailer.thanks') %></p>
+  </body>
+</html>

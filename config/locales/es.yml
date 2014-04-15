@@ -199,7 +199,7 @@ es:
       <<: *errors
 
   dictionary:
-    title: &title ¡Bienvenido!
+    title: &title "¡Bienvenido!"
     back: &back Volver
     new: &new Nuevo
     edit: &edit Editar
@@ -209,15 +209,15 @@ es:
     Products: &Products Productos
     email: &email email
     status: &status Estado
-    payment: &payment Tipo de pago
+    payment: &payment "Tipo de pago"
     address: &address Dirección
     city: &city Ciudad
     name: &name Nombre
     surname: &surname Apellidos
     password: &password Contraseña
     description: &description Descripción
-    date_add: &date_add Fecha alta
-    manufacturer: &manufacturer Elaborado por
+    date_add: &date_add "Fecha alta"
+    manufacturer: &manufacturer "Elaborado por"
     units: &units Unidades
     category: &category Categoría
     price: &price Precio
@@ -225,9 +225,10 @@ es:
   nav:
     home: Inicio
     Products: *Products
-    Order: Órdenes
+    Orders: Pedidos
     Users: Usuarios
-    Logged_in_as: Accediendo como
+    Mails: Mails
+    Logged_in_as: Saludos
     Log_out: Salir
     Log_in: Acceder
     Sign_up: Alta
@@ -236,18 +237,23 @@ es:
     show: *show
 
   flash:
-    invalid_email_or_password: email or password incorrecto
-    logged_in: ¡Has accedido!
-    you_are_logged_out: ¡Has salido!
+    invalid_email_or_password: "email or password incorrecto"
+    logged_in: "¡Has accedido!"
+    you_are_logged_out: "¡Has salido!"
 
   home:
     title: *title
     paragraph: Inicio
 
+  order_mailer:
+    info: "Detalle del pedido de"
+    description: "Aquí tiene la información del pedido:"
+    thanks: "¡Gracias por su pedido y tenga un buen día!"
+
   orders:
-    title: Listado de órdenes
-    created: "¡Has creado la orden!"
-    updated: "Has actualizado la orden"
+    title: "Listado de pedidos"
+    created: "¡Has creado el pedido!"
+    updated: "Has actualizado el pedido"
     status: *status
     payment: *payment
     address: *address
@@ -257,16 +263,19 @@ es:
     units: *units
     price: *price
     new: *new
+    new_order: "Nuevo pedido"
     edit: *edit
-  form:
-      Products: *Products
-      add_item: Añadir item
-      prohibited_this_order_from_being_saved: no se ha guardado la orden
+    form:
+        Products: *Products
+        add_item: "Añadir Producto"
+        prohibited_this_order_from_being_saved: "no se ha guardado el pedido"
+        add: "Crear pedido"
 
   products:
-    title: Listado de productos
+    title: "Listado de productos"
     filter:
       title: Filtros
+      search: Buscar
     created: "¡Has creado el producto!"
     updated: "Has actualizado el producto"
     name: *name
@@ -276,16 +285,19 @@ es:
     units: *units
     category: *category
     price: *price
+    to: a
     new: *new
+    new_product: "Nuevo producto"
     edit: *edit
     form:
-        prohibited_this_product_from_being_saved: no se ha guardado el producto
+        prohibited_this_product_from_being_saved: "no se ha guardado el producto"
+        add: "Crear producto"
 
   sessions:
-    log_in: Iniciar sesión
+    log_in: "Iniciar sesión"
 
   users:
-    title: Listado de usuarios
+    title: "Listado de usuarios"
     created: "¡Has creado el usuario!"
     updated: "Has actualizado el usuario"
     new: *new
@@ -293,10 +305,32 @@ es:
     name: *name
     email: *email
     form:
-        prohibited_this_user_from_being_saved: no se ha guardado el usuario
+        prohibited_this_user_from_being_saved: "no se ha guardado el usuario"
+        add: "Create usuario"
 
   alert:
-    are_you_sure: ¿Está seguro?
+    are_you_sure: "¿Está seguro?"
     destroy: *destroy
-    Do_you_want_to_end_session: ¿Desea finalizar la sesión?
+    Do_you_want_to_end_session: "¿Desea finalizar la sesión?"
     error: Error
+
+  activerecord:
+    attributes:
+      order:
+        status: Estado
+        payment: "Tipo de pago"
+        address: Dirección
+        city: Ciudad
+        name: Nombre
+        surname: Apellidos
+      line_item:
+        units: Unidades
+        product: Producto
+      product:
+        name: Nombre
+        description: Descripción
+        category: Categoría
+        added_at: "Fecha alta"
+        manufacturer: "Elaborado por"
+        units: Unidades
+        price: Precio

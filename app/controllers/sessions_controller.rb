@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-    before_action :check_user_logged_login, only: [:new]
 
     def new
     end
