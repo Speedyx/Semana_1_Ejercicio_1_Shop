@@ -11,3 +11,9 @@
     <%= link_to t("nav.Log_in"), log_in_path, :class => "navbar-brand" %>
   <% end %>
 </nav>
+
+<nav class="navbar navbar-default navbar-fixed-bottom navbar-brand" role="navigation">
+  <%= link_to_if(params[:locale] != "en", "[EN]", {locale: :en}) %>
+  <%= link_to_if(params[:locale] != "es", "[ES]", {locale: :es}) %>
+  <%= link_to_if(params[:locale] != "ca", "[CA]", {locale: :ca}) %>
+</nav>

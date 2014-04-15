@@ -1,5 +1,5 @@
 <fieldset>
-  <legend><%= t('products.filter.title') %></legend>
+  <legend><%= t('products.find.title') %></legend>
   <%= form_tag products_path, method: "get" do |f| %>
     <div class="field">
       <%= label_tag t('products.category') %><br>
@@ -21,6 +21,6 @@
       <%= text_field_tag :min, params[:min] %> <%= t('products.to') %>
       <%= text_field_tag :max, params[:max] %>
     </div>
-    <%= submit_tag t('products.filter.search') %><br>
+    <%= submit_tag t('products.find.search') %><br>
     <% end %>
   </fieldset>

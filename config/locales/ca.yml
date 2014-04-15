@@ -274,7 +274,7 @@ ca:
 
   products:
     title: "Llistat de productes"
-    filter:
+    find:
       title: Filtres
       search: Cercar
     created: "Has creat el producte!"

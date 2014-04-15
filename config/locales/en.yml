@@ -96,7 +96,7 @@ en:
 
   products:
     title: "Listing products"
-    filter:
+    find:
       title: Filters
       search: Search
     created: "Product was successfully created!"

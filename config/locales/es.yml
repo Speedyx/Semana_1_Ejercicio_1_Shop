@@ -273,7 +273,7 @@ es:
 
   products:
     title: "Listado de productos"
-    filter:
+    find:
       title: Filtros
       search: Buscar
     created: "¡Has creado el producto!"
