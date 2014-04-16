@@ -11,12 +11,11 @@ class Order < ActiveRecord::Base
     STATUS = %w(Waiting Sent Delivered)
 
     validates :name, :surname, :address, :city, :payment, presence: true
-    validates :status, on: :update, presence: true
 
     #validates :payment, format: {with: /\A\b(Efectivo|Tarjeta|Paypal)\z/, message: "Efectivo, Tarjeta o Paypal"}
     #validates :status, on: :update, format: {with: /\A\b(Pendiente|Enviado|Recibido)\z/, message: "Pendiente, Enviado, Recibido"}
     validates :payment, inclusion: { in: PAYMENTS, message: "%{value} is not a valid payment: Cash, Card or Paypal" }
-    validates :status, inclusion: { in: STATUS, message: "%{value} is not a valid state: Waiting, Sent or Delivered" }
+    validates :status, inclusion: { in: STATUS, message: "%{value} is not a valid state: Waiting, Sent or Delivered" }, on: :update, presence: true
 
     protected
         def set_status
