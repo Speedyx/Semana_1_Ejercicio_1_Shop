@@ -106,6 +106,7 @@ en:
     find:
       title: Filters
       search: Search
+      clear: Clear
     created: "Product was successfully created!"
     updated: "Product was successfully updated"
     name: *name
