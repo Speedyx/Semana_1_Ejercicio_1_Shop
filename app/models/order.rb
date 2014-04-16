@@ -5,10 +5,10 @@ class Order < ActiveRecord::Base
 
     before_create :set_status
 
-      PAYMENTS = %w(Cash Card Paypal)
-      #PAYMENTS = %w(#{t('var.payments.cash')} #{t('var.payments.card')} #{t('var.payments.paypal')})
-      #PAYMENTS = %w(/\A\b(t('var.payments.cash')|t('var.payments.card')|t('var.payments.paypal'))\z/)
-      STATUS = %w(Waiting Sent Delivered)
+    PAYMENTS = %w(Cash Card Paypal)
+    #PAYMENTS = %w(#{t('var.payments.cash')} #{t('var.payments.card')} #{t('var.payments.paypal')})
+    #PAYMENTS = %w(/\A\b(t('var.payments.cash')|t('var.payments.card')|t('var.payments.paypal'))\z/)
+    STATUS = %w(Waiting Sent Delivered)
 
     validates :name, :surname, :address, :city, :payment, presence: true
     validates :status, on: :update, presence: true
