@@ -2,7 +2,7 @@ class Product < ActiveRecord::Base
   has_many :line_items
   has_many :orders, through: :line_items
 
-  CATEGORIES = %w(Books Music&Films Electronics Home Toys Clothes Food Empty)
+  CATEGORIES = %w(\ Books Music&Films Electronics Home Toys Clothes Food)
     
   validates :name, :added_at, :units, :price, presence: true
   validates :name, uniqueness:true
