@@ -222,6 +222,12 @@ es:
     category: &category Categoría
     price: &price Precio
 
+  var:
+    payments:
+        cash: Efectivo
+        card: Tarjeta
+        paypal: Paypal
+
   nav:
     home: Inicio
     Products: *Products
@@ -235,6 +241,7 @@ es:
     back: *back
     edit: *edit
     show: *show
+    locale: "Elige el idioma"
 
   flash:
     invalid_email_or_password: "email or password incorrecto"

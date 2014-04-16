@@ -223,6 +223,12 @@ ca:
     category: &category Categoria
     price: &price Preu
 
+  var:
+    payments:
+        cash: Efectiu
+        card: Tarjeta
+        paypal: Paypal
+
   nav:
     home: Inici
     Products: Productes
@@ -236,6 +242,7 @@ ca:
     back: *back
     edit: *edit
     show: *show
+    locale: "Eligeix l'idioma"
 
   flash:
     invalid_email_or_password: "email o password incorrectes"

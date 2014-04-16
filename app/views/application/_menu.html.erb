@@ -13,6 +13,7 @@
 </nav>
 
 <nav class="navbar navbar-default navbar-fixed-bottom navbar-brand" role="navigation">
+  <%= t('nav.locale')%> -->
   <%= link_to_if(params[:locale] != "en", "[EN]", {locale: :en}) %>
   <%= link_to_if(params[:locale] != "es", "[ES]", {locale: :es}) %>
   <%= link_to_if(params[:locale] != "ca", "[CA]", {locale: :ca}) %>

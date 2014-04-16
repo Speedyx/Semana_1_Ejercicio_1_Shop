@@ -14,12 +14,12 @@
   <% if @order.id? %>
   <div>
     <%= f.label :status %><br>
-    <%= f.text_field :status %>
+    <%= f.select :status, Order::STATUS %>
   </div>
   <% end %>
   <div>
     <%= f.label :payment %><br>
-    <%= f.text_field :payment %>
+    <%= f.select :payment, Order::PAYMENTS %>
   </div>
   <div>
     <%= f.label :address %><br>

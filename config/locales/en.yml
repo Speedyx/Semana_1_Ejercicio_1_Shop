@@ -47,6 +47,12 @@ en:
     category: &category Category
     price: &price Price
 
+  var:
+    payments:
+        cash: Cash
+        card: Card
+        paypal: Paypal
+
   nav:
     home: Home
     Products: Products
@@ -60,6 +66,7 @@ en:
     back: *back
     edit: *edit
     show: *show
+    locale: "Choose your language"
 
   flash:
     invalid_email_or_password: "Invalid email or password"
