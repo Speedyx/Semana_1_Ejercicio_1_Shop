@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-  <% if @order.id? %>
+  <% if @order.persisted? %>
   <div>
     <%= f.label :status %><br>
     <%= f.select :status, Order::STATUS %>
