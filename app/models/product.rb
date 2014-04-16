@@ -2,13 +2,13 @@ class Product < ActiveRecord::Base
   has_many :line_items
   has_many :orders, through: :line_items
 
-  CATEGORIES = %w(\ Books Music&Films Electronics Home Toys Clothes Food)
+  CATEGORIES = %w(\  Books Music&Films Electronics Home Toys Clothes Food)
     
   validates :name, :added_at, :units, :price, presence: true
   validates :name, uniqueness:true
   validates_numericality_of :units, :only_integer => true, :greater_than_or_equal_to => 0
   validates_numericality_of :price, :greater_than_or_equal_to => 0
-  validates :category, inclusion: { in: CATEGORIES message: "Choose one of this: Books, Music&Films, Electronics, Home, Toys, Clothes, Food, or Empty" }
+  validates :category, inclusion: { in: CATEGORIES, message: "Choose one of this: Books, Music&Films, Electronics, Home, Toys, Clothes, Food, or Empty" }
   #validates :category, format: {with: /\A\b(books|music & films|electronics|home|toys|clothes, food)\z/, message: "books, music & films, electronics, home, toys, clothes, food, or empty."}, allow_blank: true
 
   scope :category, ->(category) {where("category like ?", category) unless category.blank?}
