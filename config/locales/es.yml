@@ -313,7 +313,7 @@ es:
     email: *email
     form:
         prohibited_this_user_from_being_saved: "no se ha guardado el usuario"
-        add: "Create usuario"
+        add: "Crear usuario"
 
   alert:
     are_you_sure: "¿Está seguro?"
