@@ -23,5 +23,9 @@
       <%= text_field_tag :max, params[:max] %>
     </div>
     <%= submit_tag t('products.find.search') %><br>
-    <% end %>
-  </fieldset>
+  <% end %>
+  <br />
+  <%= form_tag products_path, method: "get" do |f| %>
+    <%= submit_tag t('products.find.clean') %><br>
+  <% end %>
+</fieldset>
