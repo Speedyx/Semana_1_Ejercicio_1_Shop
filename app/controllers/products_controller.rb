@@ -5,15 +5,13 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
-
+    #@products = Product.all
     @products = Product.filter(params[:category],
                                params[:units],
                                params[:added_at],
                                params[:manufacturer],
                                params[:min],
                                params[:max])
-
   end
 
   # GET /products/1
