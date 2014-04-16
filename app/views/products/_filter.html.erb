@@ -3,6 +3,7 @@
   <%= form_tag products_path, method: "get" do |f| %>
     <div class="field">
       <%= label_tag t('products.category') %><br>
+      <%= f.select :category, Product::CATEGORIES %>
     </div>
     <div class="field">
       <%= label_tag t('products.units') %><br>
