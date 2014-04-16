@@ -283,6 +283,7 @@ es:
     find:
       title: Filtros
       search: Buscar
+      clear: Limpiar
     created: "¡Has creado el producto!"
     updated: "Has actualizado el producto"
     name: *name
