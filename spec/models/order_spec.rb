@@ -21,26 +21,12 @@ describe Order do
 
     end
 
-    it "responds to status" do
-        should respond_to(:status)
-    end
-    it "responds to payment" do
-        should respond_to(:payment)
-    end
-    it "responds to address" do
-        should respond_to(:address)
-    end
-    it "responds to city" do
-        should respond_to(:city)
-    end
-    it "responds to name" do
-        should respond_to(:name)
-    end
-    it "responds to surname" do
-        should respond_to(:surname)
-    end
-    it "not responds to zzz" do
-        should_not respond_to(:zzz)
-    end
-
+    it { should respond_to(:status) }
+    it { should respond_to(:payment) }
+    it { should respond_to(:address) }
+    it { should respond_to(:city) }
+    it { should respond_to(:name) }
+    it { should respond_to(:surname) }
+    it { should_not respond_to(:zzz) }
+    
 end
