@@ -1,4 +1,5 @@
 require 'faker'
+
 FactoryGirl.define do
   factory :user do
     name "MiNombre"
@@ -7,4 +8,5 @@ FactoryGirl.define do
     password "pass1234"
     password_confirmation "pass1234"
   end
+
 end
