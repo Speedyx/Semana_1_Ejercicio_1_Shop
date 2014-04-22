@@ -25,32 +25,13 @@ describe Product do
 
     end
 
-    it "responds to name" do
-        should respond_to(:name)
-    end
-    it "responds to description" do
-        should respond_to(:description)
-    end
-    it "responds to added_at" do
-        should respond_to(:added_at)
-    end
-    it "responds to manufacturer" do
-        should respond_to(:manufacturer)
-    end
-    it "responds to units" do
-        should respond_to(:units)
-    end
-    it "responds to created_at" do
-        should respond_to(:created_at)
-    end
-    it "responds to category" do
-        should respond_to(:category)
-    end
-    it "responds to price" do
-        should respond_to(:price)
-    end
-    it "not responds to zzz" do
-        should_not respond_to(:zzz)
-    end
-
+    it { should respond_to(:name) }
+    it { should respond_to(:description) }
+    it { should respond_to(:added_at) }
+    it { should respond_to(:manufacturer) }
+    it { should respond_to(:units) }
+    it { should respond_to(:category) }
+    it { should respond_to(:price) }
+    it { should_not respond_to(:zzz) }
+    
 end
