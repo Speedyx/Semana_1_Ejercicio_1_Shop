@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe User do
-
     describe "#new" do
         it "returns a new user object" do
             should be_an_instance_of User
@@ -29,7 +28,6 @@ describe User do
     it { should respond_to(:password) }
     it { should respond_to(:password_confirmation) }
     it { should_not respond_to(:zzz) }
-
 
     it { FactoryGirl.build(:user).should be_valid }
     it { FactoryGirl.build(:user, email: nil).should_not be_valid }
