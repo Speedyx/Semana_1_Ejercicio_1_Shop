@@ -22,26 +22,12 @@ describe User do
 
     end
 
-    it "responds to name" do
-        should respond_to(:name)
-    end
-    it "responds to surname" do
-        should respond_to(:surname)
-    end
-    it "responds to email" do
-        should respond_to(:email)
-    end
-    it "responds to password_digest" do
-        should respond_to(:password_digest)
-    end
-    it "responds to password" do
-        should respond_to(:password)
-    end
-    it "responds to password_confirmation" do
-        should respond_to(:password_confirmation)
-    end
-    it "not responds to zzz" do
-        should_not respond_to(:zzz)
-    end
+    it { should respond_to(:name) }
+    it { should respond_to(:surname) }
+    it { should respond_to(:email) }
+    it { should respond_to(:password_digest) }
+    it { should respond_to(:password) }
+    it { should respond_to(:password_confirmation) }
+    it { should_not respond_to(:zzz) }
 
 end
