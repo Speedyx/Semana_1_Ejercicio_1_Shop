@@ -1,3 +1,4 @@
+# spec/spec_helper.rb
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
@@ -39,4 +40,12 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
+
+  #Para abreviar los Factories
+  config.include FactoryGirl::Syntax::Methods
+
+  #Para el login
+  config.include SessionsHelper, type: :controller
+
+
 end
