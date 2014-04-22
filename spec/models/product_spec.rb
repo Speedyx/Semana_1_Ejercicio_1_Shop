@@ -33,5 +33,10 @@ describe Product do
     it { should respond_to(:category) }
     it { should respond_to(:price) }
     it { should_not respond_to(:zzz) }
+
+    it { FactoryGirl.build(:product).should be_valid }
+    it { FactoryGirl.build(:product, category: nil).should_not be_valid }
+    it { FactoryGirl.build(:product, units: "A").should_not be_valid }
+    it { FactoryGirl.build(:product, price: "A").should_not be_valid }
     
 end
