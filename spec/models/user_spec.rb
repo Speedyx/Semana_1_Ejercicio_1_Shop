@@ -1,3 +1,4 @@
+# spec/models/user_spec.rb
 require 'spec_helper'
 
 describe User do
@@ -33,5 +34,5 @@ describe User do
     it { FactoryGirl.build(:user, email: nil).should_not be_valid }
     it { FactoryGirl.build(:user, password: "12345678").should_not be_valid }
     it { FactoryGirl.build(:user, password: "password").should_not be_valid }
-    
+
 end

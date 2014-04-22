@@ -1,3 +1,4 @@
+# spec/models/order_spec.rb
 require 'spec_helper'
 
 describe Order do
@@ -34,5 +35,5 @@ describe Order do
     it { FactoryGirl.build(:order, status: "Waiting").should be_valid }
     it { FactoryGirl.build(:order, status: "AAA").should be_valid }
     it { FactoryGirl.build(:order, payment: "AAA").should_not be_valid }
-    
+
 end

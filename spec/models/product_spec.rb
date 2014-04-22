@@ -1,3 +1,4 @@
+# spec/models/product_spec.rb
 require 'spec_helper'
 
 describe Product do
@@ -38,5 +39,5 @@ describe Product do
     it { FactoryGirl.build(:product, category: nil).should_not be_valid }
     it { FactoryGirl.build(:product, units: "A").should_not be_valid }
     it { FactoryGirl.build(:product, price: "A").should_not be_valid }
-    
+
 end
