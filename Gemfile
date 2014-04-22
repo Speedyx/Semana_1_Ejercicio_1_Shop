@@ -47,4 +47,10 @@ gem 'bcrypt-ruby'
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
+end
+
+group :test do
+  gem 'faker'
+  #gem 'capybara-webkit'
 end
