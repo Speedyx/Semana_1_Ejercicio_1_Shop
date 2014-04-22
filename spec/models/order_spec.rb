@@ -28,5 +28,11 @@ describe Order do
     it { should respond_to(:name) }
     it { should respond_to(:surname) }
     it { should_not respond_to(:zzz) }
+
+    it { FactoryGirl.build(:order).should be_valid }
+    it { FactoryGirl.build(:order, status: "").should be_valid }
+    it { FactoryGirl.build(:order, status: "Waiting").should be_valid }
+    it { FactoryGirl.build(:order, status: "AAA").should be_valid }
+    it { FactoryGirl.build(:order, payment: "AAA").should_not be_valid }
     
 end
